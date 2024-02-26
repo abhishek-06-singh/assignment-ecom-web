@@ -168,7 +168,7 @@ const OrderSummary = () => {
               </div>
               <div className="flex items-center justify-between pt-4">
                 <dt className="font-medium text-gray-900">Order total</dt>
-                <dd className="font-medium text-cyan-600">
+                <dd className="font-medium text-indigo-600">
                   ${(subtotal + taxCharge + shippingCharge).toFixed(2)}
                 </dd>
               </div>

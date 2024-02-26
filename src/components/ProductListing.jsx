@@ -31,7 +31,7 @@ const ProductListing = () => {
       <Header />
       <Stats />
       <div className="bg-white">
-        <h1 className="flex items-center text-center justify-center mt-10 text-3xl font-bold text-cyan-900">
+        <h1 className="flex items-center text-center justify-center mt-10 text-3xl font-bold text-indigo-900">
           Products.
         </h1>
         {loading ? (
@@ -69,7 +69,7 @@ const ProductListing = () => {
                         key={index}
                         className={
                           index < Math.floor(product.rating.rate)
-                            ? "text-cyan-500"
+                            ? "text-indigo-500"
                             : "text-gray-300"
                         }
                       />

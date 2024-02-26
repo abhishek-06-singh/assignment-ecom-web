@@ -115,7 +115,7 @@ const Header = () => {
   };
 
   return (
-    <>
+    <div className="z-50">
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
           <Transition.Child
@@ -162,7 +162,7 @@ const Header = () => {
                           className={({ selected }) =>
                             classNames(
                               selected
-                                ? "border-cyan-600 text-cyan-600"
+                                ? "border-indigo-600 text-indigo-600"
                                 : "border-transparent text-gray-900",
                               "flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium"
                             )
@@ -259,7 +259,7 @@ const Header = () => {
           </div>
         </Dialog>
       </Transition.Root>
-      <header className="relative">
+      <header className="relative z-50">
         <nav aria-label="Top">
           <div className="bg-white">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -282,7 +282,7 @@ const Header = () => {
                                 <Popover.Button
                                   className={classNames(
                                     open
-                                      ? "text-cyan-600"
+                                      ? "text-indigo-600"
                                       : "text-gray-700 hover:text-gray-800",
                                     "relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out"
                                   )}
@@ -290,7 +290,7 @@ const Header = () => {
                                   {category.name}
                                   <span
                                     className={classNames(
-                                      open ? "bg-cyan-600" : "",
+                                      open ? "bg-indigo-600" : "",
                                       "absolute inset-x-0 -bottom-px z-20 h-0.5 transition duration-200 ease-out"
                                     )}
                                     aria-hidden="true"
@@ -472,7 +472,7 @@ const Header = () => {
 
                             <button
                               onClick={() => navigate("/checkout")}
-                              className="w-full rounded-md border border-transparent bg-cyan-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                              className="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                             >
                               Checkout
                             </button>
@@ -480,7 +480,7 @@ const Header = () => {
                             <p className="mt-6 text-center">
                               <span
                                 onClick={() => navigate("/bag")}
-                                className="text-sm font-medium text-cyan-600 hover:text-cyan-500"
+                                className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
                               >
                                 View Shopping Bag
                               </span>
@@ -540,7 +540,7 @@ const Header = () => {
           </div>
         </nav>
       </header>
-    </>
+    </div>
   );
 };
 

@@ -215,7 +215,7 @@ const Testemonials = () => {
                   {column.map((testimonial) => (
                     <figure
                       key={testimonial.author.handle}
-                      className="rounded-2xl bg-cyan-700/10 p-6 shadow-lg ring-1 ring-gray-900/5"
+                      className="rounded-2xl bg-indigo-700/10 p-6 shadow-lg ring-1 ring-gray-900/5"
                     >
                       <blockquote className="text-gray-900">
                         <p>{`“${testimonial.body}”`}</p>

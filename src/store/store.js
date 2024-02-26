@@ -4,6 +4,7 @@ import cartReducer from "./cartSlice";
 import addressReducer from "./addressSlice";
 import orderSummaryReducer from "./orderSummarySlice";
 import googleAuthReducer from "./googleAuthSlice";
+import darkModeReducer from "./darkModeSlice";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     address: addressReducer,
     orderSummary: orderSummaryReducer,
     googleAuth: googleAuthReducer,
+    darkMode: darkModeReducer,
   },
 });
 export default store;

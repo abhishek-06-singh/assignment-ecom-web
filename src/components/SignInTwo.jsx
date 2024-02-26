@@ -26,6 +26,7 @@ const SignInTwo = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -59,7 +60,7 @@ const SignInTwo = () => {
 
   return (
     <GoogleOAuthProvider clientId="777852050140-u30fcetaufed00k03pua3n5ot45au2aq.apps.googleusercontent.com">
-      <div className="flex min-h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-slate-950 ">
+      <div className="flex min-h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-gray-950 ">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="mx-auto h-16 w-auto"

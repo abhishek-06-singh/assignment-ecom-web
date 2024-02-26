@@ -92,7 +92,7 @@ const ShoppingBag = () => {
                               onClick={(event) =>
                                 handleRemoveFromCart(item.id, event)
                               }
-                              className="text-sm font-medium text-cyan-600 hover:text-cyan-500"
+                              className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
                             >
                               <span>Remove</span>
                             </button>
@@ -129,7 +129,7 @@ const ShoppingBag = () => {
                 <div className="mt-10">
                   <button
                     onClick={() => navigate("/checkout")}
-                    className="w-full rounded-md border border-transparent bg-cyan-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                    className="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                   >
                     Checkout
                   </button>
@@ -140,7 +140,7 @@ const ShoppingBag = () => {
                     or
                     <span
                       onClick={() => navigate("/home")}
-                      className="font-medium text-cyan-600 hover:text-cyan-500"
+                      className="font-medium text-indigo-600 hover:text-indigo-500"
                     >
                       Continue Shopping
                       <span aria-hidden="true"> &rarr;</span>

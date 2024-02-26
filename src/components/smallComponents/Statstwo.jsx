@@ -7,7 +7,7 @@ const productStats = [
 ];
 const Statstwo = () => {
   return (
-    <div className="relative bg-gradient-to-r from-indigo-800 to-cyan-900">
+    <div className="relative bg-gradient-to-r from-indigo-800 to-indigo-900">
       <div className="absolute inset-x-0 bottom-0 ">
         <svg
           viewBox="0 0 224 12"

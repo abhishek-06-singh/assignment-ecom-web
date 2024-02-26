@@ -110,7 +110,7 @@ const Checkout = () => {
         aria-hidden="true"
       />
       <div
-        className="fixed right-0 top-0 hidden h-full w-1/2 bg-gradient-to-r from-fuchsia-50 to-cyan-50 lg:block"
+        className="fixed right-0 top-0 hidden h-full w-1/2 bg-gradient-to-r from-fuchsia-50 to-indigo-50 lg:block"
         aria-hidden="true"
       />
 
@@ -119,7 +119,7 @@ const Checkout = () => {
 
         <section
           aria-labelledby="summary-heading"
-          className="bg-gradient-to-r from-fuchsia-50 to-cyan-50 px-4 pb-10 pt-16 sm:px-6 lg:col-start-2 lg:row-start-1 lg:bg-transparent lg:px-0 lg:pb-16"
+          className="bg-gradient-to-r from-fuchsia-50 to-indigo-50 px-4 pb-10 pt-16 sm:px-6 lg:col-start-2 lg:row-start-1 lg:bg-transparent lg:px-0 lg:pb-16"
         >
           <div className="mx-auto max-w-lg">
             <h2
@@ -266,7 +266,7 @@ const Checkout = () => {
                     autoComplete="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className={`block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm px-3 py-2 bg-gray-50 ${
+                    className={`block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2 bg-gray-50 ${
                       validationErrors.email ? "border-red-500" : ""
                     }`}
                   />
@@ -303,7 +303,7 @@ const Checkout = () => {
                       autoComplete="cc-name"
                       value={formData.nameOnCard}
                       onChange={handleInputChange}
-                      className={`block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm px-3 py-2 bg-gray-50 ${
+                      className={`block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2 bg-gray-50 ${
                         validationErrors.nameOnCard ? "border-red-500" : ""
                       }`}
                     />
@@ -330,7 +330,7 @@ const Checkout = () => {
                       autoComplete="cc-number"
                       value={formData.cardNumber}
                       onChange={handleInputChange}
-                      className={`block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm px-3 py-2 bg-gray-50 ${
+                      className={`block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2 bg-gray-50 ${
                         validationErrors.cardNumber ? "border-red-500" : ""
                       }`}
                     />
@@ -357,7 +357,7 @@ const Checkout = () => {
                       autoComplete="cc-exp"
                       value={formData.expirationDate}
                       onChange={handleInputChange}
-                      className={`block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm px-3 py-2 bg-gray-50 ${
+                      className={`block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2 bg-gray-50 ${
                         validationErrors.expirationDate ? "border-red-500" : ""
                       }`}
                     />
@@ -384,7 +384,7 @@ const Checkout = () => {
                       autoComplete="csc"
                       value={formData.cvc}
                       onChange={handleInputChange}
-                      className={`block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm px-3 py-2 bg-gray-50 ${
+                      className={`block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2 bg-gray-50 ${
                         validationErrors.cvc ? "border-red-500" : ""
                       }`}
                     />
@@ -401,7 +401,7 @@ const Checkout = () => {
             <div className="mt-10 border-t border-gray-200 pt-6 sm:flex sm:items-center sm:justify-between">
               <button
                 type="submit"
-                className="w-full rounded-md bg-cyan-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:order-last sm:ml-6 sm:w-auto"
+                className="w-full rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:order-last sm:ml-6 sm:w-auto"
               >
                 Continue
               </button>

@@ -25,7 +25,7 @@ const incentives = [
 
 const Trending = () => {
   return (
-    <div className="bg-gradient-to-r from-indigo-50 to-cyan-50 mt-20 relative">
+    <div className="bg-gradient-to-r from-indigo-50 to-indigo-50 mt-20 relative">
       <div className="absolute inset-x-0 bottom-0 ">
         <svg
           viewBox="0 0 224 12"

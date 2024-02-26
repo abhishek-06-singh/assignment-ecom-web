@@ -45,7 +45,7 @@ const Address = () => {
                 onChange={(e) =>
                   handleShippingAddressChange("address", e.target.value)
                 }
-                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm px-3 py-2 bg-gray-50"
+                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2 bg-gray-50"
               />
             </div>
           </div>
@@ -66,7 +66,7 @@ const Address = () => {
                 onChange={(e) =>
                   handleShippingAddressChange("apartment", e.target.value)
                 }
-                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm px-3 py-2 bg-gray-50"
+                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2 bg-gray-50"
               />
             </div>
           </div>
@@ -88,7 +88,7 @@ const Address = () => {
                 onChange={(e) =>
                   handleShippingAddressChange("city", e.target.value)
                 }
-                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm px-3 py-2 bg-gray-50"
+                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2 bg-gray-50"
               />
             </div>
           </div>
@@ -110,7 +110,7 @@ const Address = () => {
                 onChange={(e) =>
                   handleShippingAddressChange("region", e.target.value)
                 }
-                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm px-3 py-2 bg-gray-50"
+                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2 bg-gray-50"
               />
             </div>
           </div>
@@ -132,7 +132,7 @@ const Address = () => {
                 onChange={(e) =>
                   handleShippingAddressChange("postalCode", e.target.value)
                 }
-                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm px-3 py-2 bg-gray-50"
+                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2 bg-gray-50"
               />
             </div>
           </div>
@@ -151,7 +151,7 @@ const Address = () => {
             type="checkbox"
             checked={billingSameAsShipping}
             onChange={handleBillingSameAsShippingToggle}
-            className="h-4 w-4 rounded border-gray-300 text-cyan-600 focus:ring-cyan-500 bg-gray-50"
+            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 bg-gray-50"
           />
           <div className="ml-2">
             <label

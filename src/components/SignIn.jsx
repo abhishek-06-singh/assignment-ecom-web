@@ -69,7 +69,7 @@ const SignIn = () => {
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
-              <div className="bg-cyan-500/10 px-6 py-12 shadow-md sm:rounded-lg sm:px-12">
+              <div className="bg-indigo-500/10 px-6 py-12 shadow-md sm:rounded-lg sm:px-12">
                 <form
                   className="space-y-6"
                   onSubmit={handleSubmit}
@@ -124,7 +124,7 @@ const SignIn = () => {
                         id="remember-me"
                         name="remember-me"
                         type="checkbox"
-                        className="h-4 w-4 rounded border-gray-300 text-cyan-600 focus:ring-cyan-600"
+                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                       />
                       <label
                         htmlFor="remember-me"
@@ -137,7 +137,7 @@ const SignIn = () => {
                     <div className="text-sm leading-6">
                       <a
                         href="#"
-                        className="font-semibold text-cyan-600 hover:text-cyan-500"
+                        className="font-semibold text-indigo-600 hover:text-indigo-500"
                       >
                         Forgot password?
                       </a>
@@ -147,7 +147,7 @@ const SignIn = () => {
                   <div>
                     <button
                       type="submit"
-                      className="flex w-full justify-center rounded-md bg-cyan-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600"
+                      className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     >
                       Sign in
                     </button>
@@ -199,7 +199,7 @@ const SignIn = () => {
                 Made with love by{" "}
                 <a
                   href="#"
-                  className="font-semibold leading-6 text-cyan-600 hover:text-cyan-500"
+                  className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
                 >
                   Abhishek
                 </a>
