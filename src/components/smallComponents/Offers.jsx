@@ -1,8 +1,14 @@
 import React from "react";
-
+import { useSelector, useDispatch } from "react-redux";
+import { toggleDarkMode, selectDarkMode } from "../../store/darkModeSlice";
 const Offers = () => {
+  const isDarkMode = useSelector(selectDarkMode);
   return (
-    <div className="bg-white">
+    <div
+      className={`bg-white ${
+        isDarkMode ? "bg-gray-900 text-white" : "bg-white text-black"
+      }`}
+    >
       <div className="overflow-hidden pt-32 sm:pt-14">
         <div className="bg-indigo-950">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

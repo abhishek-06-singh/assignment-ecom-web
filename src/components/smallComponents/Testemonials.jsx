@@ -1,4 +1,6 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleDarkMode, selectDarkMode } from "../../store/darkModeSlice";
 
 const featuredTestimonial = {
   body: "I recently purchased a smartphone from this app and it exceeded my expectations. The delivery was fast, and the product quality is excellent. Special thanks to Akshay Saini for creating such an amazing platform!",
@@ -155,8 +157,13 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 const Testemonials = () => {
+  const isDarkMode = useSelector(selectDarkMode);
   return (
-    <div className="relative isolate bg-white pb-32 pt-24 sm:pt-32">
+    <div
+      className={`relative isolate  pb-32 pt-24 sm:pt-32 ${
+        isDarkMode ? "bg-gray-900 text-white" : "bg-white text-black"
+      }`}
+    >
       <div
         className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
         aria-hidden="true"
@@ -164,16 +171,16 @@ const Testemonials = () => {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">
+          <h2 className="text-lg font-semibold leading-8 tracking-tight ">
             Testimonials
           </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             People with amazing experience
           </p>
         </div>
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
-          <figure className="col-span-2 hidden sm:block sm:rounded-2xl sm:bg-white sm:shadow-lg sm:ring-1 sm:ring-gray-900/5 xl:col-start-2 xl:row-end-1">
-            <blockquote className="p-12 text-xl font-semibold leading-8 tracking-tight text-gray-900">
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
+          <figure className="col-span-2 hidden sm:block sm:rounded-2xl  sm:shadow-lg sm:ring-1 sm:ring-gray-900/5 xl:col-start-2 xl:row-end-1">
+            <blockquote className="p-12 text-xl font-semibold leading-8 tracking-tight ">
               <p>{`“${featuredTestimonial.body}”`}</p>
             </blockquote>
             <figcaption className="flex items-center gap-x-4 border-t border-gray-900/10 px-6 py-4">
@@ -186,7 +193,7 @@ const Testemonials = () => {
                 <div className="font-semibold">
                   {featuredTestimonial.author.name}
                 </div>
-                <div className="text-gray-600">{`@${featuredTestimonial.author.handle}`}</div>
+                <div className="">{`@${featuredTestimonial.author.handle}`}</div>
               </div>
               <img
                 className="h-10 w-auto flex-none"
@@ -217,7 +224,7 @@ const Testemonials = () => {
                       key={testimonial.author.handle}
                       className="rounded-2xl bg-indigo-700/10 p-6 shadow-lg ring-1 ring-gray-900/5"
                     >
-                      <blockquote className="text-gray-900">
+                      <blockquote className="">
                         <p>{`“${testimonial.body}”`}</p>
                       </blockquote>
                       <figcaption className="mt-6 flex items-center gap-x-4">
@@ -230,7 +237,7 @@ const Testemonials = () => {
                           <div className="font-semibold">
                             {testimonial.author.name}
                           </div>
-                          <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
+                          <div className="">{`@${testimonial.author.handle}`}</div>
                         </div>
                       </figcaption>
                     </figure>

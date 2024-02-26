@@ -8,10 +8,13 @@ import { FaStar } from "react-icons/fa";
 import Offers from "./smallComponents/Offers";
 import ShimmerLoader from "./shimmerUi/ShimmerLoader";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleDarkMode, selectDarkMode } from "../store/darkModeSlice";
 const ProductListing = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
+  const isDarkMode = useSelector(selectDarkMode);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,8 +33,12 @@ const ProductListing = () => {
     <>
       <Header />
       <Stats />
-      <div className="bg-white">
-        <h1 className="flex items-center text-center justify-center mt-10 text-3xl font-bold text-indigo-900">
+      <div
+        className={` ${
+          isDarkMode ? "bg-gray-900 text-white" : "bg-white text-black"
+        }`}
+      >
+        <h1 className="flex items-center text-center justify-center  text-3xl font-bold ">
           Products.
         </h1>
         {loading ? (
@@ -47,7 +54,7 @@ const ProductListing = () => {
                   onClick={() => navigate(`/product-overview/${product.id}`)}
                 >
                   <div
-                    className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 p-1"
+                    className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg  xl:aspect-h-8 xl:aspect-w-7 p-1"
                     style={{ height: "300px" }}
                   >
                     <img
@@ -57,12 +64,8 @@ const ProductListing = () => {
                       style={{ height: "100%", width: "100%" }}
                     />
                   </div>
-                  <h3 className="mt-4 text-sm text-gray-700">
-                    {product.title}
-                  </h3>
-                  <p className="mt-1 text-lg font-medium text-gray-900">
-                    ${product.price}
-                  </p>
+                  <h3 className="mt-4 text-sm ">{product.title}</h3>
+                  <p className="mt-1 text-lg font-medium ">${product.price}</p>
                   <div className="flex items-center mt-1 text-lg text-yellow-500">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <FaStar

@@ -1,4 +1,6 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleDarkMode, selectDarkMode } from "../store/darkModeSlice";
 const perks = [
   {
     name: "Free returns",
@@ -30,10 +32,13 @@ const perks = [
   },
 ];
 const Perks = () => {
+  const isDarkMode = useSelector(selectDarkMode);
   return (
     <section
       aria-labelledby="perks-heading"
-      className="border-t border-gray-200 bg-gray-50"
+      className={`border-t border-gray-200 bg-gray-50 ${
+        isDarkMode ? "bg-gray-900 text-white" : "bg-white text-black"
+      }`}
     >
       <h2 id="perks-heading" className="sr-only">
         Our perks
@@ -56,10 +61,8 @@ const Perks = () => {
                 </div>
               </div>
               <div className="mt-6 md:ml-4 md:mt-0 lg:ml-0 lg:mt-6">
-                <h3 className="text-base font-medium text-gray-900">
-                  {perk.name}
-                </h3>
-                <p className="mt-3 text-sm text-gray-500">{perk.description}</p>
+                <h3 className="text-base font-medium ">{perk.name}</h3>
+                <p className="mt-3 text-sm ">{perk.description}</p>
               </div>
             </div>
           ))}

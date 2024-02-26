@@ -5,7 +5,9 @@ import { FaQuestionCircle } from "react-icons/fa";
 import { FaBagShopping } from "react-icons/fa6";
 import { FaChevronDown } from "react-icons/fa";
 import { IoMdArchive } from "react-icons/io";
-import { useSelector } from "react-redux";
+
+import { useSelector, useDispatch } from "react-redux";
+import { toggleDarkMode, selectDarkMode } from "../store/darkModeSlice";
 import blackimage from "../assets/white.png";
 import Collection from "./Collection ";
 import { CiLogout } from "react-icons/ci";
@@ -16,7 +18,9 @@ import {
   selectPassword,
 } from "../store/authSlice";
 import { selectGoogleEmail } from "../store/googleAuthSlice";
+import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+
 const navigation = {
   categories: [
     {
@@ -104,6 +108,8 @@ function classNames(...classes) {
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const isDarkMode = useSelector(selectDarkMode);
   const email = useSelector(selectEmail);
   const googleEmail = useSelector(selectGoogleEmail);
   const [open, setOpen] = useState(false);
@@ -113,9 +119,16 @@ const Header = () => {
   const handleLogout = () => {
     navigate("/");
   };
+  const toggleMode = () => {
+    dispatch(toggleDarkMode());
+  };
 
   return (
-    <div className="z-50">
+    <div
+      className={`bg-white z-50 ${
+        isDarkMode ? "bg-gray-900 text-gray-100 " : "bg-white text-black"
+      }`}
+    >
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
           <Transition.Child
@@ -140,7 +153,13 @@ const Header = () => {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
+              <Dialog.Panel
+                className={`relative flex w-full max-w-xs flex-col overflow-y-auto  pb-12 shadow-xl ${
+                  isDarkMode
+                    ? "bg-gray-900 text-gray-100 "
+                    : "bg-white text-black"
+                }`}
+              >
                 <div className="flex px-4 pb-2 pt-5">
                   <button
                     type="button"
@@ -163,7 +182,7 @@ const Header = () => {
                             classNames(
                               selected
                                 ? "border-indigo-600 text-indigo-600"
-                                : "border-transparent text-gray-900",
+                                : "border-transparent text-gray-400",
                               "flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium"
                             )
                           }
@@ -191,7 +210,7 @@ const Header = () => {
                               </div>
                               <span
                                 onClick={() => navigate(item.href)}
-                                className="mt-6 block text-sm font-medium text-gray-900"
+                                className="mt-6 block text-sm font-medium text-gray-400"
                               >
                                 <span
                                   className="absolute inset-0 z-10"
@@ -216,13 +235,13 @@ const Header = () => {
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
                     <span
-                      className="-m-2 block p-2 font-medium text-gray-900"
+                      className="-m-2 block p-2 font-medium text-gray-400"
                       onClick={() => navigate("/products/electronic")}
                     >
                       Electronics
                     </span>
                     <span
-                      className="-m-2 block p-2 font-medium text-gray-900"
+                      className="-m-2 block p-2 font-medium text-gray-400"
                       onClick={() => navigate("/bag")}
                     >
                       Shopping bag
@@ -230,7 +249,7 @@ const Header = () => {
                   </div>
                 </div>
 
-                <div className="space-y-6 border-t border-gray-200 px-4 py-6">
+                <div className="space-y-6 border-t border-gray-400 px-4 py-6">
                   <div className="flow-root">
                     <p>{email || googleEmail}</p>
                   </div>
@@ -238,7 +257,7 @@ const Header = () => {
                     <div className="flow-root">
                       <button
                         onClick={handleLogout}
-                        className="-m-2 block p-2 font-medium text-gray-900"
+                        className="-m-2 block p-2 font-medium text-gray-400"
                       >
                         Logout
                       </button>
@@ -259,11 +278,31 @@ const Header = () => {
           </div>
         </Dialog>
       </Transition.Root>
-      <header className="relative z-50">
+      <header
+        className={`relative z-50 ${
+          isDarkMode ? "bg-gray-900 text-gray-100 " : "bg-white text-black"
+        }`}
+      >
         <nav aria-label="Top">
-          <div className="bg-white">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="flex h-16 items-center justify-between">
+          <div
+            className={`bg-white ${
+              isDarkMode ? "bg-gray-900 text-gray-100 " : "bg-white text-black"
+            }`}
+          >
+            <div
+              className={`mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 ${
+                isDarkMode
+                  ? "bg-gray-900 text-gray-100 "
+                  : "bg-white text-black"
+              }`}
+            >
+              <div
+                className={`flex h-16 items-center justify-between  ${
+                  isDarkMode
+                    ? "bg-gray-900 text-gray-100 "
+                    : "bg-white text-black"
+                }`}
+              >
                 <div className="hidden lg:flex lg:flex-1 lg:items-center">
                   <span onClick={() => navigate("/home")}>
                     <span className="sr-only">Your Company</span>
@@ -271,7 +310,13 @@ const Header = () => {
                   </span>
                 </div>
 
-                <div className="hidden h-full lg:flex">
+                <div
+                  className={`hidden h-full lg:flex ${
+                    isDarkMode
+                      ? "bg-gray-900 text-gray-100 "
+                      : "bg-white text-black"
+                  }`}
+                >
                   <Popover.Group className="inset-x-0 bottom-0 px-4">
                     <div className="flex h-full justify-center space-x-8">
                       {navigation.categories.map((category) => (
@@ -283,7 +328,7 @@ const Header = () => {
                                   className={classNames(
                                     open
                                       ? "text-indigo-600"
-                                      : "text-gray-700 hover:text-gray-800",
+                                      : "text-gray-400 hover:text-gray-300",
                                     "relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out"
                                   )}
                                 >
@@ -327,8 +372,20 @@ const Header = () => {
                                   </div>
 
                                   <div className="relative">
-                                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                                      <div className="grid grid-cols-4 gap-x-8 gap-y-10 py-16">
+                                    <div
+                                      className={`mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 ${
+                                        isDarkMode
+                                          ? "bg-gray-900 text-gray-100 "
+                                          : "bg-white text-black"
+                                      }`}
+                                    >
+                                      <div
+                                        className={`grid grid-cols-4 gap-x-8 gap-y-10 py-16 ${
+                                          isDarkMode
+                                            ? "bg-gray-900 text-gray-100 "
+                                            : "bg-white text-black"
+                                        }`}
+                                      >
                                         {category.featured.map((item) => (
                                           <div
                                             key={item.name}
@@ -372,13 +429,13 @@ const Header = () => {
                       ))}
 
                       <span
-                        className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                        className="flex items-center text-sm font-medium text-gray-400 hover:text-gray-300"
                         onClick={() => navigate("/products/electronic")}
                       >
                         Electronics
                       </span>
                       <span
-                        className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                        className="flex items-center text-sm font-medium text-gray-400 hover:text-gray-300"
                         onClick={() => navigate("/bag")}
                       >
                         Shopping Bag
@@ -489,6 +546,9 @@ const Header = () => {
                         </Popover.Panel>
                       </Transition>
                     </Popover>
+                    {/* <button onClick={toggleMode} className="text-3xl ml-3">
+                      {isDarkMode ? <MdOutlineDarkMode /> : <MdDarkMode />}
+                    </button> */}
                     <Popover className="  text-sm lg:block  z-50 hidden">
                       <Popover.Button className="group  flex items-center p-2">
                         <a

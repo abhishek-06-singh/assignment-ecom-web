@@ -1,4 +1,7 @@
 import React from "react";
+
+import { useSelector, useDispatch } from "react-redux";
+import { toggleDarkMode, selectDarkMode } from "../store/darkModeSlice";
 const incentives = [
   {
     name: "Free shipping",
@@ -24,23 +27,21 @@ const incentives = [
 ];
 
 const Trending = () => {
+  const isDarkMode = useSelector(selectDarkMode);
   return (
-    <div className="bg-gradient-to-r from-indigo-50 to-indigo-50 mt-20 relative">
-      <div className="absolute inset-x-0 bottom-0 ">
-        <svg
-          viewBox="0 0 224 12"
-          fill="currentColor"
-          className="w-full -mb-1 text-white "
-          preserveAspectRatio="none"
-        >
-          <path d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z" />
-        </svg>
-      </div>
+    <div
+      className={`bg-gradient-to-r from-indigo-50 to-indigo-50  relative *:${
+        isDarkMode
+          ? "bg-gradient-to-r from-gray-900 to-indigo-950 text-white"
+          : "bg-gradient-to-r from-indigo-50 to-indigo-50 text-black"
+      }`}
+    >
+      <div className="absolute inset-x-0 bottom-0 "></div>
       <div className="mx-auto max-w-7xl py-24 sm:px-2 sm:py-32 lg:px-4">
         <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
           <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
             <div>
-              <h2 className="text-4xl font-bold tracking-tight text-gray-900">
+              <h2 className="text-4xl font-bold tracking-tight ">
                 Our Commitment to Exceptional Customer Service
               </h2>
               <p className="mt-4 text-gray-500">
@@ -55,7 +56,7 @@ const Trending = () => {
               </p>
             </div>
 
-            <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg bg-gray-100">
+            <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg ">
               <img
                 src="https://tailwindui.com/img/ecommerce-images/incentives-07-hero.jpg"
                 alt=""
@@ -70,12 +71,8 @@ const Trending = () => {
                   <img className="h-16 w-16" src={incentive.imageSrc} alt="" />
                 </div>
                 <div className="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
-                  <h3 className="text-sm font-medium text-gray-900">
-                    {incentive.name}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-500">
-                    {incentive.description}
-                  </p>
+                  <h3 className="text-sm font-medium ">{incentive.name}</h3>
+                  <p className="mt-2 text-sm ">{incentive.description}</p>
                 </div>
               </div>
             ))}
